@@ -3,7 +3,11 @@ import { cn } from '../lib/utils';
 import { motion, AnimatePresence } from 'motion/react';
 import { Menu, X } from 'lucide-react';
 
-export default function Navbar() {
+interface NavbarProps {
+  onGetStarted: () => void;
+}
+
+export default function Navbar({ onGetStarted }: NavbarProps) {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
@@ -43,7 +47,10 @@ export default function Navbar() {
               {link.name}
             </a>
           ))}
-          <button className="bg-slate-900 text-white px-6 py-3 rounded-xl text-sm font-black hover:bg-brand transition-all duration-500 shadow-xl shadow-slate-900/10">
+          <button 
+            onClick={onGetStarted}
+            className="bg-slate-900 text-white px-6 py-3 rounded-xl text-sm font-black hover:bg-brand transition-all duration-500 shadow-xl shadow-slate-900/10"
+          >
             Get Started
           </button>
         </div>
@@ -77,7 +84,13 @@ export default function Navbar() {
                   {link.name}
                 </a>
               ))}
-              <button className="bg-brand text-white w-full py-4 rounded-xl font-bold">
+              <button 
+                onClick={() => {
+                  setIsMobileMenuOpen(false);
+                  onGetStarted();
+                }}
+                className="bg-brand text-white w-full py-4 rounded-xl font-bold"
+              >
                 Start Free Audit
               </button>
             </div>
