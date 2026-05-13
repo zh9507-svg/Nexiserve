@@ -16,7 +16,7 @@ export default function Footer() {
           {/* Brand Col */}
           <div className="md:col-span-2">
             <div className="flex items-center mb-8">
-              <img src="/logo.png" alt="NexiServe" className="h-10 w-auto" />
+              <img src="/logo.png" alt="NexiServe" className="h-12 md:h-16 w-auto" />
             </div>
             <p className="text-xl text-slate-500 font-medium leading-relaxed max-w-sm mb-12">
               Engineering the next generation of agency infrastructure. Built for scale, not for safety.
