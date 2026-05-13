@@ -15,11 +15,8 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 md:gap-24 mb-32">
           {/* Brand Col */}
           <div className="md:col-span-2">
-            <div className="flex items-center gap-3 mb-8">
-              <div className="w-12 h-12 bg-slate-900 rounded-2xl flex items-center justify-center font-display font-black text-white text-2xl shadow-xl shadow-slate-900/10">
-                N
-              </div>
-              <span className="font-display font-black text-3xl tracking-tighter text-slate-900">NexiServe</span>
+            <div className="flex items-center mb-8">
+              <img src="/logo.png" alt="NexiServe" className="h-10 w-auto" />
             </div>
             <p className="text-xl text-slate-500 font-medium leading-relaxed max-w-sm mb-12">
               Engineering the next generation of agency infrastructure. Built for scale, not for safety.

@@ -28,11 +28,8 @@ export default function Navbar() {
       )}
     >
       <div className="max-w-7xl mx-auto flex items-center justify-between">
-        <div className="flex items-center gap-3">
-          <div className="w-10 h-10 bg-slate-900 rounded-xl flex items-center justify-center font-display font-black text-white text-xl shadow-lg shadow-slate-900/10">
-            N
-          </div>
-          <span className="font-display font-black text-2xl tracking-tighter text-slate-900">NexiServe</span>
+        <div className="flex items-center">
+          <img src="/logo.png" alt="NexiServe" className="h-10 w-auto" />
         </div>
 
         {/* Desktop Links */}
