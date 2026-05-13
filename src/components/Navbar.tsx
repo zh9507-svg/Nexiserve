@@ -47,12 +47,6 @@ export default function Navbar({ onGetStarted }: NavbarProps) {
               {link.name}
             </a>
           ))}
-          <button 
-            onClick={onGetStarted}
-            className="bg-slate-900 text-white px-6 py-3 rounded-xl text-sm font-black hover:bg-brand transition-all duration-500 shadow-xl shadow-slate-900/10"
-          >
-            Get Started
-          </button>
         </div>
 
         {/* Mobile Toggle */}
@@ -84,15 +78,6 @@ export default function Navbar({ onGetStarted }: NavbarProps) {
                   {link.name}
                 </a>
               ))}
-              <button 
-                onClick={() => {
-                  setIsMobileMenuOpen(false);
-                  onGetStarted();
-                }}
-                className="bg-brand text-white w-full py-4 rounded-xl font-bold"
-              >
-                Start Free Audit
-              </button>
             </div>
           </motion.div>
         )}

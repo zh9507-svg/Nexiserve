@@ -3,9 +3,10 @@ import { ArrowRight, Zap, Target, Shield, Rocket } from 'lucide-react';
 
 interface CTASectionProps {
   onAction: () => void;
+  onTestAction: () => void;
 }
 
-export default function CTASection({ onAction }: CTASectionProps) {
+export default function CTASection({ onAction, onTestAction }: CTASectionProps) {
   return (
     <section id="contact" className="py-20 md:py-32 px-6 bg-white relative overflow-hidden">
       {/* Background Graphic */}
@@ -48,13 +49,22 @@ export default function CTASection({ onAction }: CTASectionProps) {
               ))}
             </div>
 
-            <button 
-              onClick={onAction}
-              className="w-full sm:w-auto bg-slate-900 text-white px-8 py-5 md:px-12 md:py-8 rounded-[1.5rem] md:rounded-[2.5rem] font-black text-lg md:text-2xl hover:bg-brand transition-all shadow-2xl shadow-slate-900/10 flex items-center justify-center gap-3 md:gap-4 mx-auto group"
-            >
-              Start System Audit
-              <ArrowRight className="w-6 h-6 md:w-8 md:h-8 group-hover:translate-x-2 transition-transform" />
-            </button>
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 md:gap-6 mx-auto">
+              <button 
+                onClick={onAction}
+                className="w-full sm:w-auto bg-slate-900 text-white px-8 py-5 md:px-12 md:py-8 rounded-[1.5rem] md:rounded-[2.5rem] font-black text-lg md:text-2xl hover:bg-brand transition-all shadow-2xl shadow-slate-900/10 flex items-center justify-center gap-3 md:gap-4 group"
+              >
+                Start System Audit
+                <ArrowRight className="w-6 h-6 md:w-8 md:h-8 group-hover:translate-x-2 transition-transform" />
+              </button>
+              <button 
+                onClick={onTestAction}
+                className="w-full sm:w-auto bg-white border-2 border-slate-900 text-slate-900 px-8 py-5 md:px-12 md:py-8 rounded-[1.5rem] md:rounded-[2.5rem] font-black text-lg md:text-2xl hover:bg-slate-50 transition-all flex items-center justify-center gap-3 md:gap-4"
+              >
+                Test AI voice agent
+                <Zap className="w-6 h-6 md:w-8 md:h-8" />
+              </button>
+            </div>
             
             <div className="mt-12 text-[10px] font-black text-slate-400 uppercase tracking-[0.3em]">
                Limited Availability: 2/3 Slots Remaining for Q2

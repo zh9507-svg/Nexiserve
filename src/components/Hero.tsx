@@ -1,13 +1,15 @@
 import React from 'react';
 import { motion } from 'motion/react';
-import { ArrowRight, Play } from 'lucide-react';
+import { ArrowRight, Play, Zap } from 'lucide-react';
 
 interface HeroProps {
-  onWatchDemo: () => void;
   onPrimaryAction: () => void;
+  onTestAction: () => void;
 }
 
-export default function Hero({ onWatchDemo, onPrimaryAction }: HeroProps) {
+export default function Hero({ onPrimaryAction, onTestAction }: HeroProps) {
+  const VIDEO_URL = "https://assets.cdn.filesafe.space/SNDu8PnbHK5mXYgWnUV0/media/68b824a49bcba95afdbb78b0.mov";
+
   return (
     <section className="relative pt-32 pb-20 md:pt-40 md:pb-32 px-6 overflow-hidden bg-white">
       {/* Dynamic Background */}
@@ -39,7 +41,7 @@ export default function Hero({ onWatchDemo, onPrimaryAction }: HeroProps) {
             Custom AI workflows engineered for faster response and stronger margins.
           </p>
 
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 md:gap-6">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 md:gap-6 mb-16">
             <button 
               onClick={onPrimaryAction}
               className="w-full sm:w-auto bg-slate-900 text-white px-8 py-5 md:px-10 md:py-6 rounded-2xl font-black text-lg md:text-xl flex items-center justify-center gap-2 hover:bg-brand transition-all shadow-2xl shadow-slate-900/10"
@@ -48,13 +50,30 @@ export default function Hero({ onWatchDemo, onPrimaryAction }: HeroProps) {
               <ArrowRight className="w-5 h-5 md:w-6 md:h-6" />
             </button>
             <button 
-              onClick={onWatchDemo}
-              className="w-full sm:w-auto bg-white border border-slate-200 text-slate-900 px-8 py-5 md:px-10 md:py-6 rounded-2xl font-black text-lg md:text-xl flex items-center justify-center gap-2 hover:bg-slate-50 transition-all shadow-sm"
+              onClick={onTestAction}
+              className="w-full sm:w-auto bg-white border-2 border-slate-900 text-slate-900 px-8 py-5 md:px-10 md:py-6 rounded-2xl font-black text-lg md:text-xl flex items-center justify-center gap-2 hover:bg-slate-50 transition-all"
             >
-              <Play className="w-5 h-5 md:w-6 md:h-6 fill-current" />
-              Watch Demo
+              Test AI voice agent
+              <Zap className="w-5 h-5 md:w-6 md:h-6" />
             </button>
           </div>
+
+          {/* Video Preview */}
+          <motion.div 
+            initial={{ opacity: 0, y: 40 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.4, duration: 1 }}
+            className="max-w-5xl mx-auto rounded-[2rem] md:rounded-[3rem] overflow-hidden border border-slate-200 shadow-2xl bg-white p-2 md:p-4"
+          >
+            <div className="rounded-[1.5rem] md:rounded-[2.5rem] overflow-hidden bg-slate-900 relative aspect-video shadow-inner">
+              <video 
+                src={VIDEO_URL} 
+                className="w-full h-full object-cover"
+                controls
+                playsInline
+              />
+            </div>
+          </motion.div>
         </motion.div>
 
         {/* Stats Grid */}
