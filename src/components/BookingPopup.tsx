@@ -42,15 +42,14 @@ export default function BookingPopup({ isOpen, onClose }: BookingPopupProps) {
               </button>
             </div>
 
-            {/* Iframe Wrapper - Balanced height and matched background to widget */}
-            <div className="flex-1 overflow-y-auto bg-slate-900 p-2 md:p-8">
-              <div className="w-full bg-[#111827] rounded-2xl md:rounded-3xl border border-white/5 shadow-2xl overflow-hidden relative">
+            {/* Iframe Wrapper - Reverted to white background and allowed scrolling to fix cut-off issues */}
+            <div className="flex-1 overflow-y-auto bg-slate-50 p-2 md:p-8">
+              <div className="w-full h-full min-h-[600px] md:min-h-[800px] bg-white rounded-2xl md:rounded-3xl border border-slate-200 shadow-sm overflow-hidden relative">
                 <iframe 
                   src="https://api.leadconnectorhq.com/widget/booking/dGCudwVrtWlY2yrdzGkG" 
-                  style={{ width: '100%', height: '1200px', border: 'none' }} 
+                  style={{ width: '100%', height: '100%', border: 'none' }} 
                   id="XmAEGsDPaGHdAAFTRYM6_1778682654406"
                   title="Booking Widget"
-                  scrolling="no"
                 />
               </div>
             </div>
